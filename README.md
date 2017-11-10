@@ -1,2 +1,1 @@
-# blockdash
-Payment api blockdash
+# BlockDash.io
