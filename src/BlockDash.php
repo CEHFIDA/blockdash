@@ -45,7 +45,7 @@ class BlockDash implements BlockDashInterface
 		return $PassData;
 	}
 
-	function form($payment_id, $sum, $units='USD'){
+	function form($payment_id, $sum, $units='DSH'){
 		$sum = number_format($sum, 2, ".", "");
 
 		$response = $this->client->request('POST', 'wallet/create_address', [
@@ -59,6 +59,7 @@ class BlockDash implements BlockDashInterface
 		$body     = $response->getBody();
 		$code     = $response->getStatusCode();
 		$resp     = json_decode($body->getContents());	
+		// dd($resp);
 		$PassData = new \stdClass();
 
 		if($resp->code == 200){
