@@ -95,12 +95,16 @@ class BlockDash implements BlockDashInterface
 					"full_data_ipn" => json_encode($request)
 				];
 				event(new BlockDashPaymentIncome($PassData));
+				echo $request['order_id']."|success";
+				return true;
 			}
-
+			echo $request['order_id']."|error";
 		}catch(BlockDashException $e){
 			Log::error('BlockDash IPN', [
 				'message' => $e->getMessage()
 			]);
+			
+			echo $request['order_id']."|continue";
 		}
 	}
 
