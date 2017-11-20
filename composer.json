@@ -1,7 +1,7 @@
 {
   "name": "selfreliance/blockdash",
   "type": "library",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Dash coin payment system for laravel",
   "keywords": ["laravel"],
   "homepage": "https://github.com/selfrelianceme/blockdash",
