@@ -5,6 +5,7 @@ namespace Selfreliance\BlockDash;
 use Illuminate\Http\Request;
 use Config;
 use Route;
+use Log;
 
 use Illuminate\Foundation\Validation\ValidatesRequests;
 
@@ -93,7 +94,7 @@ class BlockDash implements BlockDashInterface
 					"address"       => $request['address'],
 					"full_data_ipn" => json_encode($request)
 				];
-				event(new BlockDashPaymentIncome($PassData));			
+				event(new BlockDashPaymentIncome($PassData));
 			}
 
 		}catch(BlockDashException $e){
