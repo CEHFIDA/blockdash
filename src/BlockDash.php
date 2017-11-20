@@ -118,7 +118,7 @@ class BlockDash implements BlockDashInterface
 		}
 
 		$hash = md5($post_data['order_id'].Config::get('blockdash.secret_key'));
-		if($hash != $post_data['hashpay']){
+		if($hash != $post_data['hash_pay']){
 			throw new BlockDashException("Hash pay not confirmed");	
 		}
 
