@@ -96,9 +96,9 @@ class BlockDash implements BlockDashInterface
 				];
 				event(new BlockDashPaymentIncome($PassData));
 				echo $request['order_id']."|success";
-				return true;
-			}
-			echo $request['order_id']."|error";
+			}else{
+				echo $request['order_id']."|error";	
+			}			
 		}catch(BlockDashException $e){
 			Log::error('BlockDash IPN', [
 				'message' => $e->getMessage()
