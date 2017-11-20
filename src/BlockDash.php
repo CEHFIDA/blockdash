@@ -125,7 +125,7 @@ class BlockDash implements BlockDashInterface
 	}
 
 	public function validateIPNRequest(Request $request) {
-        return $this->income_payment($request->all(), $request->server(), $request->headers);
+        return $this->check_transaction($request->all(), $request->server(), $request->headers);
     }
 
 	public function send_money($payment_id, $amount, $address, $currency){
